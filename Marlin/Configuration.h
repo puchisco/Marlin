@@ -535,7 +535,7 @@
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  */
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -766,7 +766,7 @@
  */
 #define DEFAULT_MAX_FEEDRATE          { 500, 500, 20, 120 }
 
-//#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
+#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
   #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50 } // ...or, set your own edit limits
 #endif
@@ -1177,7 +1177,7 @@
 #endif
 
 #if EITHER(MIN_SOFTWARE_ENDSTOPS, MAX_SOFTWARE_ENDSTOPS)
-  //#define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
+  #define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
 #endif
 
 /**
@@ -1550,7 +1550,7 @@
   //#define NOZZLE_PARK_Y_ONLY          // Y move only is required to park
   #define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance
   #define NOZZLE_PARK_XY_FEEDRATE 100   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
-  #define NOZZLE_PARK_Z_FEEDRATE    3   // (mm/s) Z axis feedrate (not used for delta printers)
+  #define NOZZLE_PARK_Z_FEEDRATE    5   // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
 
 /**
@@ -2490,15 +2490,15 @@
  * Set this manually if there are extra servos needing manual control.
  * Set to 0 to turn off servo support.
  */
-//#define NUM_SERVOS 3 // Servo index starts with 0 for M280 command
+#define NUM_SERVOS 1 // Servo index starts with 0 for M280 command
 
 // (ms) Delay  before the next move will start, to give the servo time to reach its target angle.
 // 300ms is a good value but you can try less delay.
 // If the servo can't reach the requested position, increase it.
-#define SERVO_DELAY { 300 }
+#define SERVO_DELAY { 350 }
 
 // Only power servos during movement, otherwise leave off to prevent jitter
-//#define DEACTIVATE_SERVOS_AFTER_MOVE
+#define DEACTIVATE_SERVOS_AFTER_MOVE
 
 // Edit servo angles with M281 and save to EEPROM with M500
-//#define EDITABLE_SERVO_ANGLES
+#define EDITABLE_SERVO_ANGLES
