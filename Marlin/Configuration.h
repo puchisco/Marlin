@@ -1012,7 +1012,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -59.5, -19, -1.5 }
+#define NOZZLE_TO_PROBE_OFFSET { -59.5, -19, -1.25 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1020,7 +1020,7 @@
 
 // X and Y axis travel speed (mm/min) between probes
 //#define XY_PROBE_SPEED (133*60)
-#define XY_PROBE_SPEED 4800
+#define XY_PROBE_SPEED 4000
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 //#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
